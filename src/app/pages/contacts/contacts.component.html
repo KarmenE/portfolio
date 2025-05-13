@@ -1,0 +1,146 @@
+<div class="container">
+  <h2 class="mb-4 mt-4">Contatti</h2>
+  <hr />
+  <h4 class="mb-5 mt-4">
+    Un codice, un caffè e una buona chiacchierata: la mia combo ideale!
+  </h4>
+
+  <h3 class="mb-4 mt-5">Seguimi o scrivimi sui social</h3>
+
+  <div class="row row-cols-2 g-2">
+    <div class="col p-2">
+      <img src="/social/fb.png" alt="" />
+      <a
+        href="https://www.facebook.com/carmen.elena.351/"
+        class="contact-link"
+        target="_blank"
+        title="Seguimi su Facebook"
+        >Facebook</a
+      >
+    </div>
+    <div class="col p-2">
+      <img src="/social/ig.png" alt="" />
+      <a
+        href="https://www.instagram.com/karmen_ellena/"
+        class="contact-link"
+        target="_blank"
+        title="Seguimi su Instagram"
+        >Instagram</a
+      >
+    </div>
+    <div class="col p-2">
+      <img src="/social/lk.png" alt="" />
+      <a
+        href="https://www.linkedin.com/in/carmen-elena-soltanel-70102a1a1"
+        class="contact-link"
+        target="_blank"
+        title="Seguimi su Linkedin"
+        >Linkedin</a
+      >
+    </div>
+    <div class="col p-2">
+      <img src="/social/git.png" alt="" />
+      <a
+        href="https://github.com/KarmenE"
+        class="contact-link"
+        target="_blank"
+        title="Seguimi su Github"
+        >Github</a
+      >
+    </div>
+  </div>
+
+  <hr />
+
+  <h3 class="mt-5">Oppure mandami una mail</h3>
+
+  <!-- emailjs - modulo invio email funzionante (con logica in html): -->
+
+  <!-- <div class="contact-item mb-5 mt-4">
+    <form #contactForm="ngForm" (ngSubmit)="sendEmail()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" name="from_name" ngModel required>
+            <div *ngIf="contactForm.controls['from_name']?.invalid && (contactForm.controls['from_name']?.dirty || contactForm.controls['from_name']?.touched)" class="text-danger">
+              Inserire un nome!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="from_email" ngModel email required>
+            <div *ngIf="contactForm.controls['from_email']?.invalid && (contactForm.controls['from_email']?.dirty || contactForm.controls['from_email']?.touched)">
+              <div *ngIf="contactForm.controls['from_email']?.errors?.['required']" class="text-danger">
+                Inserire un indirizzo email!
+              </div>
+              <div *ngIf="contactForm.controls['from_email']?.errors?.['email']" class="text-danger">
+                Inserisci un'email valida!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="message" class="form-label">Messaggio</label>
+            <textarea class="form-control" id="message" name="message" rows="5" ngModel required></textarea>
+            <div *ngIf="contactForm.controls['message']?.invalid && (contactForm.controls['message']?.dirty || contactForm.controls['message']?.touched)" class="text-danger">
+              Inserire un messaggio!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-dark px-4">Invia</button>
+      </div>
+
+    </form>
+  </div> -->
+  
+
+<!--emailjs - modulo invio email funzionante (con logica in typescript): -->
+
+  <div class="contact-item mb-5 mt-4">
+    <form #contactForm="ngForm" (ngSubmit)="sendEmail()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" name="from_name" ngModel required>
+            <div *ngIf="hasError('from_name')" class="text-danger">
+              {{ getErrorMessage('from_name') }}
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="from_email" ngModel email required>
+            <div *ngIf="hasError('from_email')" class="text-danger">
+              {{ getErrorMessage('from_email') }}
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="message" class="form-label">Messaggio</label>
+            <textarea class="form-control" id="message" name="message" rows="5" ngModel required></textarea>
+            <div *ngIf="hasError('message')" class="text-danger">
+              {{ getErrorMessage('message') }}
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-dark px-4">Invia</button>
+      </div>
+    </form>
+  </div>
+  
+
+
+</div>
+

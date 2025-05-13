@@ -1,0 +1,36 @@
+
+<div class="section-wrapper">
+
+  <div class="side">Sviluppatrice Front-end: Dando vita al web, un pixel alla volta.</div>
+
+  <div class="face-container" (mousemove)="onMouseMove($event, faceContainer)" (mouseleave)="onMouseLeave()" #faceContainer>
+
+    <!-- Lato sinistro -->
+    <div class="face face-left" [class.expanded]="hoveredSide === 'left'">
+      <img src="/images/home22.png" alt="Cartoon"/>
+    </div>
+
+    <!-- Lato destro -->
+    <div class="face face-right" [class.expanded]="hoveredSide === 'right'" [class.active]="isRightActive">
+      <img src="/images/home11.png" alt="Originale"/>
+    </div>
+
+  </div>
+
+  <div class="side">Appassionata di vita, curiosa del mondo.</div>
+
+</div>
+
+
+<div class="section">
+    <div class="call-to-action">
+        <h1>Ciao, sono Soltanel Carmen Elena,</h1>
+    </div>
+
+    <div class="call-to-action">
+        <a routerLink="/about" class="link">
+          <span class="arrow">→</span>
+          <span class="text">Su di me</span>
+        </a>
+    </div>
+</div>

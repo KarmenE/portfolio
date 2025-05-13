@@ -1,0 +1,101 @@
+
+
+.logo {
+  max-height: 59px; 
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 6px rgba(235, 201, 150, 0.822));
+}
+
+.icona {
+  max-height: 31px;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px;
+}
+
+.dots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 6px);
+  grid-gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.close-icon {
+  font-size: 29px;
+  font-weight: bold;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu-overlay {
+  position: fixed;
+  left: 0;
+  right: 0; /* aggiunto per coprire tutta la larghezza */
+  bottom: 0; /* idem l'altezza */
+  width: 100%;
+  height: calc(100% - 90px); /* tutta la pagina meno la navbar */
+  z-index: 999; /* sopra tutto il resto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra dentro */
+  opacity: 0;
+  pointer-events: none; /*fa evitare di cliccare sulle voci del menu quando in teoria è chiuso (perché è come se rimanessero sullo schermo)*/
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/*x tema*/
+:host {
+  display: block;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.navbar {
+  background-color: var(--bg-color);
+}
+
+.dot {
+  background-color: var(--text-color);
+}
+
+.close-icon {
+  color: var(--text-color);
+}
+

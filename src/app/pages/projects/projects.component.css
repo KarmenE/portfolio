@@ -1,0 +1,45 @@
+.carousel-inner img {
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+    background-color: #f8f9fa; 
+
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+  
+.carousel-inner img:hover {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+
+/*x tema*/
+:host {
+  display: block;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+h2, h6 {
+  color: var(--text-color);
+}
+
+.card {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn{
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color); 
+}

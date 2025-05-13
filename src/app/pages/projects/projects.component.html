@@ -1,0 +1,69 @@
+
+<div class="container my-4">
+
+    <div class="text-center mb-5">
+        <h2 class="fw-bold mb-3">Le mie prove tecniche di programmazione frontend</h2>
+        <h6 class="fst-italic">
+          Ogni progetto qui è una tappa del mio viaggio nel frontend: un percorso fatto di prove, errori, tentativi e tante soddisfazioni. Sono piccole applicazioni che ho realizzato per esercitarmi, imparare e crescere, passo dopo passo.
+          I progetti non sono ancora online, ma puoi esplorare tutto il codice su GitHub: ogni riga l'ho scritta io, con impegno e tanta voglia di migliorare.
+        </h6>
+    </div>
+      
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      <div class="col mb-3" *ngFor="let project of projects; let i = index">
+
+            <div class="card h-100 shadow-sm">
+ 
+                <div [id]="'carousel' + i" class="carousel slide" data-bs-ride="carousel" *ngIf="project.screenshots.length > 0">
+                    <div class="carousel-inner">
+                    <div class="carousel-item" *ngFor="let img of project.screenshots; let j = index" [class.active]="j === 0">
+                        <img [src]="img" class="d-block w-100" alt="Screenshot {{j + 1}}" style="cursor: zoom-in;" (click)="openImageModal(img)">
+
+                    </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carousel' + i" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Precedente</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carousel' + i" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Successivo</span>
+                    </button>
+                </div>
+        
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <p class="card-text">{{ project.description }}</p>
+        
+                    <div class="mb-2">
+                    <span class="badge bg-warning me-1" *ngFor="let tech of project.technologies">{{ tech }}</span>
+                    </div>
+        
+                    <a [href]="project.githubUrl" target="_blank" class="btn btn-outline-dark btn-sm">
+                    <i class="bi bi-github"></i> GitHub
+                    </a>
+                </div>
+
+            </div>
+
+      </div>
+
+      <!-- Modal per visualizzazione immagine ingrandita -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                <img [src]="selectedImage" class="img-fluid w-100" alt="Ingrandimento">
+                </div>
+            </div>
+            </div>
+        </div>
+  
+
+    </div>
+
+</div>
+  
+  

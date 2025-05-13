@@ -1,0 +1,33 @@
+.contact-item img,
+.col img {
+  margin-right: 10px;
+}
+
+.contact-link {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: darkorange;
+}
+
+
+/*x tema*/
+:host {
+  display: block;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+i, span, .icon-label {
+  color: var(--text-color); /* forza il colore delle etichette accanto alle icone */
+}
+
+.contact-link {
+  color: var(--text-color); 
+}

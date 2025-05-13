@@ -1,0 +1,44 @@
+
+
+.equal-height {
+  display: flex;
+  align-items: stretch;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.about-text {
+  flex: 3 1 0%;
+  padding-right: 2rem;
+}
+
+.about-image {
+  flex: 2 1 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  text-decoration: none;
+  color: orange;
+  font-weight: bold;
+}
+
+/*x tema*/
+:host {
+  display: block;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}

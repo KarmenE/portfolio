@@ -1,0 +1,129 @@
+/*div container che contiene tutto*/
+.section-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    padding: 1rem;
+    gap: 2rem;
+  }
+  
+  /*scritte a destra e sinistra della foto*/
+  .side {
+    width: 15%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #444;
+  }
+  
+  /*div che contiene entrambi i div con le rispettive foto*/
+   .face-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+  } 
+
+  /*classe del div che contiene le foto*/
+  .face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: clip-path 1.2s ease;
+  }
+  
+    /*foto all interno del div*/
+  .face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Stato base */
+  .face-left {
+    clip-path: inset(0 50% 0 0);
+    z-index: 2;
+  }
+  
+  .face-right {
+    clip-path: inset(0 0 0 50%);
+    z-index: 1;
+  }
+  
+  /* Espansione */
+  .face-left.expanded {
+    clip-path: inset(0 0 0 0);
+  }
+  
+  .face-right.expanded {
+    clip-path: inset(0 0 0 0);
+  }
+  
+  /* Z-index separato per non interferire con la transizione */
+  .face-right.active {
+    z-index: 3;
+  }
+  
+  /*css per sezione su di me*/
+
+  .call-to-action {
+    margin-top: 30px;
+    text-align: center; 
+  }
+
+  .link {
+    display: inline-flex; /* Allinea freccia e testo orizzontalmente */
+    align-items: center; /* Allinea verticalmente al centro */
+    text-decoration: none; 
+    color: black; 
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease; /* Aggiunge una transizione per l'effetto hover */
+    position: relative; /* Necessario per posizionare l'::after in modo relativo */
+  }
+  
+  .arrow {
+    font-size: 1.5em;
+    margin-right: 8px;
+  }
+
+  .link::after {
+    content: '';
+    position: absolute;
+    left: 10px; /* Regola distanza dal bordo sinistro */
+    right: 10px; /* Regola distanza dal bordo destro */
+    bottom: 9px; /* Regola la distanza dal testo */
+    height: 2px; /* Spessore della sottolineatura */
+    background-color: #333; /* Colore della sottolineatura */
+    opacity: 0; /* Inizialmente invisibile */
+    transition: opacity 0.3s ease; /* Transizione per l'effetto fade-in */
+  }
+  
+  .link:hover::after {
+    opacity: 1; /* Rende la sottolineatura visibile all'hover */
+  }
+
+
+
+  /*x tema*/
+:host {
+  display: block;
+  /* min-height: calc(100vh - 118px); */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, a, span, .arrow-label, .side {
+  color: var(--text-color);
+}
+
